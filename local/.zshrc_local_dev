@@ -1,0 +1,15 @@
+alias conoha='ssh miyajun21@163.44.164.172'
+local PROMPT_COLOR=blue
+local PROMPT_ENV=dev
+
+local HOSTNAME_SHORT=`hostname | sed -e 's/.yahoo.co.jp//g'`
+
+PROMPT="%{${fg[${PROMPT_COLOR}]}%}[${PROMPT_ENV}][${USER}@${HOSTNAME_SHORT}][%D{%y/%m/%d %T}]%{${reset_color}%} %~
+%# "
+
+## Go 環境設定
+if [ -x "`which go`" ]; then
+  export GOROOT=`go env GOROOT`
+  export GOPATH=${HOME}/.go
+  export PATH=$PATH:$GOROOT/bin
+fi

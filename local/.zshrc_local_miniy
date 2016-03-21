@@ -1,0 +1,7 @@
+local PROMPT_COLOR=cyan
+local PROMPT_ENV=miniy
+
+local HOSTNAME_SHORT=`hostname | sed -e 's/.yahoo.co.jp//g'`
+
+PROMPT="%{${fg[${PROMPT_COLOR}]}%}[${PROMPT_ENV}][${USER}@${HOSTNAME_SHORT}][%D{%y/%m/%d %T}]%{${reset_color}%} %~
+%# "
